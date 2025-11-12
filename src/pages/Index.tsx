@@ -30,13 +30,13 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-pink-50 to-orange-50">
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Icon name="Flower2" className="text-primary" size={32} />
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold text-primary">
                 FlowerShop
               </h1>
             </div>
@@ -62,7 +62,7 @@ export default function Index() {
                   </span>
                 )}
               </Button>
-              <Button className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
                 <Icon name="Phone" size={16} className="mr-2" />
                 Заказать
               </Button>
@@ -76,13 +76,13 @@ export default function Index() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 animate-fade-in">
-                <Badge className="bg-gradient-to-r from-primary to-secondary text-white border-0 text-sm px-4 py-1">
+                <Badge className="bg-primary/20 text-primary border border-primary/30 text-sm px-4 py-1">
                   Доставка за 2 часа
                 </Badge>
                 <h2 className="text-5xl md:text-7xl font-extrabold leading-tight">
                   Цветы,<br />
                   которые<br />
-                  <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                  <span className="text-primary">
                     вдохновляют
                   </span>
                 </h2>
@@ -90,11 +90,11 @@ export default function Index() {
                   Создаём букеты с душой. Свежие цветы от лучших поставщиков. Доставка по городу 24/7.
                 </p>
                 <div className="flex gap-4">
-                  <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity text-lg px-8">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8 shadow-lg">
                     Смотреть каталог
                     <Icon name="ArrowRight" size={20} className="ml-2" />
                   </Button>
-                  <Button size="lg" variant="outline" className="border-2">
+                  <Button size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/5">
                     <Icon name="Gift" size={20} className="mr-2" />
                     Подарочные наборы
                   </Button>
@@ -116,11 +116,11 @@ export default function Index() {
               </div>
               
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-secondary/20 to-accent/20 rounded-3xl blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-secondary/10 to-accent/10 rounded-3xl blur-3xl"></div>
                 <img 
                   src="https://cdn.poehali.dev/projects/50e3c96e-523c-4efc-859d-55f39ecf6491/files/c081207e-cd21-4b37-8abd-c16c3525ffe2.jpg"
                   alt="Букет цветов"
-                  className="relative rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-500"
+                  className="relative rounded-3xl shadow-xl hover:scale-[1.02] transition-transform duration-700"
                 />
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function Index() {
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
               {['Розы', 'Тюльпаны', 'Композиции', 'Подарки'].map((category, index) => (
-                <Card key={category} className="hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-2 hover:border-primary">
+                <Card key={category} className="hover:shadow-lg transition-all duration-300 hover:scale-[1.02] cursor-pointer border border-primary/20 hover:border-primary/40 bg-white/80 backdrop-blur-sm">
                   <CardContent className="p-6 text-center">
                     <div className={`text-5xl mb-3 ${
                       index === 0 ? 'text-primary' : 
@@ -158,14 +158,14 @@ export default function Index() {
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product) => (
-                <Card key={product.id} className="group overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <Card key={product.id} className="group overflow-hidden hover:shadow-xl transition-all duration-500 border border-primary/10 bg-white/90 backdrop-blur-sm">
                   <div className="relative overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name}
-                      className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <Badge className="absolute top-4 left-4 bg-white text-foreground">
+                    <Badge className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-foreground shadow-md">
                       {product.category}
                     </Badge>
                   </div>
@@ -180,7 +180,7 @@ export default function Index() {
                       </div>
                     </div>
                     <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-opacity"
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
                       onClick={addToCart}
                     >
                       <Icon name="ShoppingCart" size={18} className="mr-2" />
@@ -193,27 +193,27 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
+        <section className="py-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8">
-              <Card className="text-center p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border border-primary/10 bg-white/80 backdrop-blur-sm">
+                <div className="bg-primary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Truck" size={32} className="text-primary" />
                 </div>
                 <h4 className="font-semibold text-xl mb-2">Быстрая доставка</h4>
                 <p className="text-muted-foreground">Доставим за 2 часа в любую точку города</p>
               </Card>
               
-              <Card className="text-center p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border border-primary/10 bg-white/80 backdrop-blur-sm">
+                <div className="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Flower" size={32} className="text-secondary" />
                 </div>
                 <h4 className="font-semibold text-xl mb-2">Свежие цветы</h4>
                 <p className="text-muted-foreground">Напрямую от лучших поставщиков</p>
               </Card>
               
-              <Card className="text-center p-8 hover:shadow-xl transition-shadow">
-                <div className="bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Card className="text-center p-8 hover:shadow-lg transition-all duration-300 border border-primary/10 bg-white/80 backdrop-blur-sm">
+                <div className="bg-accent/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Heart" size={32} className="text-accent" />
                 </div>
                 <h4 className="font-semibold text-xl mb-2">С любовью</h4>
@@ -234,7 +234,7 @@ export default function Index() {
                 <p className="text-lg text-muted-foreground mb-6">
                   Работаем только со свежими цветами от проверенных поставщиков. Каждый букет — это произведение искусства.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md">
                   Узнать больше
                   <Icon name="ArrowRight" size={18} className="ml-2" />
                 </Button>
@@ -270,13 +270,13 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="py-16 bg-gradient-to-r from-primary via-secondary to-accent text-white">
+        <section className="py-16 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
           <div className="container mx-auto px-4 text-center">
-            <h3 className="text-4xl font-bold mb-4">Свежие статьи в блоге</h3>
-            <p className="text-lg mb-8 opacity-90">Советы по уходу за цветами и флористические тренды</p>
+            <h3 className="text-4xl font-bold mb-4 text-foreground">Свежие статьи в блоге</h3>
+            <p className="text-lg mb-8 text-muted-foreground">Советы по уходу за цветами и флористические тренды</p>
             <div className="grid md:grid-cols-3 gap-6">
               {['Как продлить жизнь розам', 'Модные букеты 2024', 'Символика цветов'].map((title) => (
-                <Card key={title} className="text-left hover:shadow-2xl transition-shadow">
+                <Card key={title} className="text-left hover:shadow-lg transition-all duration-300 border border-primary/10 bg-white/90 backdrop-blur-sm">
                   <CardContent className="p-6">
                     <h4 className="font-semibold text-xl mb-2 text-foreground">{title}</h4>
                     <p className="text-muted-foreground mb-4">
